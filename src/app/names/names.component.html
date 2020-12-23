@@ -1,0 +1,12 @@
+<input *ngIf="showAddNames; else showHeader" type="button" value="Add Names" (click)="toggleAddNames()">
+<ng-template #showHeader>
+    <h2>Names</h2>
+</ng-template>
+
+<div *ngFor="let entrant of entrants; let i = index;">
+    <input [(ngModel)]="entrants[i].name" type="text" value="{{entrant.name}}">
+</div>
+
+<input *ngIf="!showAddNames" type="button" value="Add Name" (click)="addName()">
+
+<input *ngIf="entrants.length > 1" type="button" value="Draw" (click)="drawNames()">
