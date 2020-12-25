@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Entrant } from '../../types/entrant';
+import { Randomizer } from 'src/model/randomizer';
+import { Entrant } from 'src/model/types/entrant';
 
 @Component({
   selector: 'app-names',
@@ -20,7 +21,10 @@ export class NamesComponent{
   }
 
   drawNames(): void {
-    console.log(this.entrants);
+    let randomizer = new Randomizer();
+    let map = randomizer.drawNames(this.entrants);
+
+    console.log(map);
   }
 
 }
