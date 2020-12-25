@@ -1,24 +1,24 @@
 export class Entrant {
-  #id: Number;
-  #name: String;
+  #id: number;
+  #name: string;
 
-  constructor(name: String) {
+  constructor(name: string) {
     this.#name = name;
    }
   
-  get id(): Number {
+  get id(): number {
     return this.#id;
   }
 
-  set id(id: Number) {
+  set id(id: number) {
     this.#id = id;
   }
 
-  get name(): String {
+  get name(): string {
     return this.#name;
   }
 
-  set name(name: String) {
+  set name(name: string) {
     this.#name = name;
   }
 }

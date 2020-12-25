@@ -1,14 +1,14 @@
-import { Entrant } from "./types/entrant";
+import { Entrant } from './types/entrant';
 
 export class Randomizer {
 
     /**
      * 
-     * @param entrants 
+     * @param entrants array of entrants info, i.e. id, name, email
      * @returns a map containing entrant id and their matched pair id
      */
-    drawNames(entrants: Entrant[]): Map<Number, Number> {
-        let ids: Number[] = [];
+    drawNames(entrants: Entrant[]): Map<number, number> {
+        let ids: number[] = [];
         let map = new Map();
         
         // assign ids for each entrant
@@ -23,7 +23,7 @@ export class Randomizer {
             map.set(value, pair);
 
             // remove the id that has been picked so nobody gets it hereafter
-            pairs = pairs.filter(id => id != pair);
+            pairs = pairs.filter(id => id !== pair);
         });
         return map;
     }
@@ -34,8 +34,8 @@ export class Randomizer {
      * @param exclude the id the draw is for
      * @returns a random id from the given array
      */
-    private draw(array: Number[], exclude: Number): Number {
-        let ids = array.filter(id => id != exclude);
+    private draw(array: number[], exclude: number): number {
+        let ids = array.filter(id => id !== exclude);
         const randomElement = array[Math.floor(Math.random() * array.length)];
         return randomElement;
     }

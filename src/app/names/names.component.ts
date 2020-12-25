@@ -9,15 +9,15 @@ import { Entrant } from 'src/model/types/entrant';
 })
 export class NamesComponent{
   entrants: Entrant[] = [];
-  showAddNames: Boolean = true;
+  showAddNames = true;
 
   toggleAddNames(): void {
     this.showAddNames = !this.showAddNames;
-    this.entrants.push(new Entrant(""));
+    this.entrants.push(new Entrant(''));
   }
 
   addName(): void {
-    this.entrants.push(new Entrant(""));
+    this.entrants.push(new Entrant(''));
   }
 
   drawNames(): void {
